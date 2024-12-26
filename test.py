@@ -39,10 +39,12 @@ inOut = [
 passed=0
 for i,o in inOut:
     with os.popen("python 2.py") as proc:
+        print('starting')
         with socket(AF_INET, SOCK_STREAM) as s:
             try:
                 s.connect(('127.0.0.1', 8080))
                 s.setblocking(False)
+                print('success')
                 for inp in i:
                     s.sendall(inp.encode())
                 time.sleep(0.1)
