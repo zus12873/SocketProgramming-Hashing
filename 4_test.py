@@ -2,7 +2,7 @@
 import os
 import time
 from socket import AF_INET, SOCK_STREAM, socket
-
+import subprocess
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
 os.chdir(dname)
@@ -16,15 +16,51 @@ inOut = [
 ('75cb4cda14b7befe77f0239a3014f8c283182ac82b4a57ba0fd3ccbe843e449661a8d9564cf71de728c613694ee50d7574cc54b5f0d356f9a931398f1f13e69eefe8d73b58b7fcfabdcadbce472c0a98c4564bafafdbfea01ab4a77042fcae04c485dfa9baae0699d76e34096548c9a22951eee089c5e8f71374c8a813418118ee635248ea071a40ffbb89b2ece4e37df90e14df0293b1bfd700cab6a83c6db7f323565e606e16e267bef115a72b0e1927230a716febfaa0d1c53ebdd3be7c944696bef75def3bd287554d72bd03966be947e27e5eb2ada132ecf626c28e0f4c54d1484075e750508f42c9ee9659696e3d7679ef3e1db6fbf894cdde163aa16d5738fa2c58fefa3e65a914430c89f851b5cf9d9468b1193ece0d2e21aeda16a7f7aa5bd0151d5268d4796668cc3a34216dd6fdd88b632d7815b4f3d87de69c2b0db4661b8a7de52548615388a9b754d226a7843fa32312c91d52e1ee2c0ce71d45a1dc564d140288b7dbf2e995fcab76b2203f76fe5d0004ad2b653286144c2649a9db30d0a186c5ed47738de9a3ebf4cc803d8a55cfa0a2e2aa78ef7ef7666c245aa03dc441cc2fa4dd0db889d3d7288515b91e0701e284e3e246f2a0c83161a8e0673c0518214b6ab8858b1ab1bce48ba980f14e9025ac05e7d5e33101334e406206307b8ef2e89ffbd22775dbc9eb6cd7386f168ba7190b900f9b3ae43a8e2efb963ec67b4bc373e4444c18f7ea33f7af7f6043e49ebeaca4c597e741a9ea33fd979c5ba4f97da7f98f5e0aa0772526d50934a5a27f297081eafc7ec0ceac4ddf6d8dbcaf9966b1a1d55667d05685ce42710f169d9b895c04226e4c91ac0dff295cc2c8ec2de0513017e29457211f787d93458e19dd087b328c5432e572e26e1bf6834cbd1e051ea61c2eab4a63256272dad2832329021b9ca28013c9f950f5f0d0ee30cd9bfb9621e5cbd204924e02be822c3f2d77705ff867a289bfccf3df36f72c1b426fc7eb526195c6ff8e29bd403f7744a69bf783942f50fe348ff7e2ad4197b96516503d72e977e50944b41fc1e3c44bb985fac0060ac2b1060f3a78359fd79f766d417b881327b80e9ad455394c26fde3ea9da8eed09c552244d9fbb1bff7a67090373e29dc0ba5b8307a327961beae586649b1263f3b553fd4d698bb31c1e8993055d93b3039ff4658bcc9de77c847c6dbdc807966cb4d2ca59e0c3e3627ebe87031a3062881a5ab9467520d12302c225c67126edc9047726c3516b9b6c55a3350e65ac4e0b1523e165c7916e6e7a2d359b6996c117f3f9dd64e0cf4e44286f11bf6a325ee03e6ff129290f5e53132e8d0e6b5b3331682cc33d14c4d1ed7dbc8f7c4dce85cea580cd5495522acb35823ac72e4d9db2d255649459e33a8f998819d038986ff74447ef33b21e16833fefe0472601c68eda574e38c84524b6bacd385bf6aad637c47a999b3798bf37bbe2beee9c0af550d219d71f49ea79d34507557a7623da8b0c9c4be032d8cf3305702c702f7a4f029264177b799f01eae5a89ed550b1cd9aff51576580ce5e7a8b3900d867eb5202ea736003e0654e0381d11a1050801f73f6c942459a36c0222210864062880902f938647a1db7ccd82196d0f250ba33aba9677238895123af98246049fcf5faa1438f30cdfe268d9506a4fc709559a2716935ed48ed88926fb9b50097aa8b0f68e0aee6d2d45d13618867906be3e9859b3e0e2725cd3a77be4a2c883b336bd686f29bc1ca8ea6785c5bc14936c567259ec1413b8400b7ce2129b2f9a2f194974a242da50876d3df40ba3be714d99a0556f40f216d306158f1187f648b0997e618e7313a50bf5c6cef9e63d900565215fa5f3a91e48307e43f13e87cb1f83d7fbd3ddc3f5bbbd4b6ea947d7aee392c216d70ab00287c8b31bc61885784e1f0513c4863973cd347207f260519ac336c50ee1b26a119fe33ddbcd6d081cc5d187a634b9c23acd9d7cfac4bebb1fd28d401c565f87308e8f0b22c8ab5c161dda8e405cb8f6cbdcd4ad1aff5227d088d16802fac2661ddfbad939d6558ea944a388a92858a9c3afe0471e87945c2dc73e95e9d554ef0b35e260193a5e56bb0fb92e9c941213bf7d9292683691663b16f4543bc2897e7588530a8d6445af531743e4a1678570d004283262b92b24b83e489620c8ea0e69d65e718dfd90158510a970ef932f1e2d8c66cf257104c3dee2b3d83743467473b44235f580a89d56780a494d2f97bf68fb23c579bdd2a8e8c783378e517c2d013fcb70fbb57474f6e5bd97d613dea93e66a8fe6a893e66c0ff8212f7375f358cf368e134c3b00fc58cc2505e36e0dac6e5f8d6efc6d540af5228f6a0d3d3f6961d7685ffc35fd7161ecb946982f142259d73c309a8f27b7deb575aadb961750e79346b31404b9fda8e6ed6f85e1d863bf20f559683cd41d5fe39c28760698ca17968b4913ac4b99c14faa0724acc37e4d1c5972b391a60bd4b31ddf4dd78696756d4d1390f7a692a85099a466460df61a6745777a21dc28598fa98547f277e3f686e5df2851715028de3e6986f78dec3eaa5765a15f6ea63c86be4c06e20e25b8f93a36908d4b528d21957c6acb68b6b181cb41854af4db692f1c8817dce4056193ce027d482fe46539c01980cf9059ca89d2261ccdeee6e1daf3eaf874ce0ac0a75a1aafd2e98b58daf1569f663aa9ea0e545a2247a1fd0a319595eb8482632cce79ac5ddac1cef356bd057b67915e20c6aea394b55ed618f0ae22f5b07d2d16b8ab6e4144ea99aabfcbb08fe324f16fba1ff4d67ffb40fbd76e7684ddf30efeb562cc2aef6003d6fc7d3d8dffac9c772ac9e35ef371f6368b60c13d40b9044c589c07ad0f2b1c86786cd4bc53acb1b6f',
  '3d70b2eb8e78ae743c88a533d251ea41ddf57b984285a5e8b370bae35bd9373d')
 ]
+# passed = 0
 
+# # Start the server in a subprocess
+# server_proc = subprocess.Popen(["python", "4.py"])
 
+# # Give the server a moment to start
+# time.sleep(1)
+
+# for i, o in inOut:
+#     try:
+#         # Create a socket and connect to the server
+#         with socket(AF_INET, SOCK_STREAM) as s:
+#             s.connect(('127.0.0.1', 8080))  # Connect to the server
+#             s.setblocking(True)
+#             # Send the input string to the server
+#             s.sendall(i.encode())
+            
+#             # Receive the server's response
+#             s.settimeout(2)  # 2-second timeout to avoid hanging indefinitely
+#             o1 = s.recv(1024).decode()
+            
+#             # Compare the received hash with the expected hash
+#             if o1 == o:
+#                 passed += 1
+                
+    
+    
+#     except Exception as e:
+#         print(f"Error during test for input: {i}, exception: {e}")
+
+# # Terminate the server process
+# server_proc.terminate()
+
+# # Wait for the server process to fully close
+# server_proc.wait()
+
+# # Print the final test result
+# print(f"Tests passed: {passed}/{len(inOut)}")
 passed=0
 for i,o in inOut:
     with os.popen("python 4.py") as proc:
         with socket(AF_INET, SOCK_STREAM) as s:
             try:
                 s.connect(('127.0.0.1', 8080))
-                s.setblocking(False)
+                s.setblocking(True)
                 s.sendall(i.encode())
                 time.sleep(0.1)
                 o1 = s.recv(1024).decode()
